@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="أسماك الشاطئ للمأكولات البحرية - مطعم أسماك فاخر في مدينة نصر منذ 2005">
+<title>أسماك الشاطئ | El Shati Seafood</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* ============================================================
+   ASMAK AL SHATIE — Premium Gold Theme
+   ============================================================ */
+:root {
+  --gold:       #C4A044;
+  --gold-dark:  #9E7E2A;
+  --gold-light: #D9B870;
+  --gold-pale:  #F0D8A0;
+  --gold-10:    rgba(196,160,68,0.10);
+  --gold-15:    rgba(196,160,68,0.15);
+  --gold-20:    rgba(196,160,68,0.20);
+  --gold-30:    rgba(196,160,68,0.30);
+  --gold-glow:  0 0 40px rgba(196,160,68,0.30);
+  --green:      #4ade80;
+  --red:        #ef4444;
+
+  --bg:         #0C0A06;
+  --bg2:        #131009;
+  --bg3:        #1C1710;
+  --bg4:        #241F15;
+  --glass:      rgba(18,14,8,0.80);
+  --glass-bdr:  rgba(196,160,68,0.20);
+  --text:       #F2E8D0;
+  --text-muted: #9A8870;
+  --text-dim:   #6A5840;
+
+  --shadow:     0 8px 40px rgba(0,0,0,0.60);
+  --radius:     16px;
+  --radius-lg:  24px;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --font:       'Cairo', sans-serif;
+}
+[data-theme="light"] {
+  --bg:         #FDFBF5;
+  --bg2:        #F5EDD8;
+  --bg3:        #EDE0C0;
+  --bg4:        #E0CFA8;
+  --glass:      rgba(255,252,240,0.90);
+  --glass-bdr:  rgba(196,160,68,0.30);
+  --text:       #1E1608;
+  --text-muted: #6A5840;
+  --text-dim:   #9A8870;
+  --shadow:     0 8px 40px rgba(0,0,0,0.15);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;min-height:100vh;transition:background .4s,color .4s}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{max-width:100%}
+button{cursor:pointer;border:none;background:none;font-family:var(--font)}
+
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+
+/* ── LOADING SCREEN ── */
+#loader{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;
+  transition:opacity .6s ease, visibility .6s ease;
+}
+#loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loader-logo{
+  width:110px;height:110px;
+  animation:loaderPulse 1.8s ease-in-out infinite;
+}
+@keyframes loaderPulse{
+  0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 rgba(196,160,68,0))}
+  50%{transform:scale(1.08);filter:drop-shadow(0 0 20px rgba(196,160,68,0.6))}
+}
+.loader-bar{width:200px;height:3px;background:var(--bg3);border-radius:3px;overflow:hidden}
+.loader-fill{height:100%;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-light));border-radius:3px;animation:loaderFill 2.2s ease forwards}
+@keyframes loaderFill{from{width:0%}to{width:100%}}
+.loader-text{color:var(--gold);font-size:.9rem;font-weight:700;letter-spacing:2px;animation:fadeInOut 2.2s ease infinite}
+@keyframes fadeInOut{0%,100%{opacity:.4}50%{opacity:1}}
+
+/* ── NAVBAR ── */
+.navbar{
+  position:fixed;top:0;right:0;left:0;z-index:1000;
+  padding:.75rem 1.5rem;
+  background:rgba(12,10,6,0.85);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--glass-bdr);
+  transition:var(--transition);
+}
+[data-theme="light"] .navbar{background:rgba(253,251,245,0.90)}
+.navbar.scrolled{padding:.5rem 1.5rem;box-shadow:var(--shadow)}
+.nav-container{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:1rem}
+.nav-logo{display:flex;align-items:center;gap:.6rem;font-size:1.1rem;font-weight:800;white-space:nowrap;text-decoration:none}
+.nav-logo img{width:42px;height:42px;object-fit:contain;border-radius:50%;background:var(--gold-10);padding:2px;filter:drop-shadow(0 0 8px rgba(196,160,68,0.3))}
+.logo-text{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:.2rem;margin-right:auto}
+.nav-link{padding:.4rem .9rem;border-radius:8px;font-size:.9rem;font-weight:600;color:var(--text-muted);transition:var(--transition);cursor:pointer;border:none;background:none;font-family:var(--font)}
+.nav-link:hover,.nav-link.active{color:var(--gold);background:var(--gold-10)}
+.nav-controls{display:flex;align-items:center;gap:.5rem}
+.ctrl-btn{
+  width:36px;height:36px;border-radius:10px;
+  background:var(--gold-10);border:1px solid var(--glass-bdr);
+  color:var(--gold);font-size:.9rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:var(--transition);cursor:pointer;
+}
+.ctrl-btn:hover{background:var(--gold-20);border-color:var(--gold)}
+.lang-btn{font-weight:800;font-size:.8rem;font-family:var(--font)}
+.nav-status{
+  display:inline-flex;align-items:center;gap:.4rem;
+  padding:.25rem .7rem;border-radius:50px;font-size:.75rem;font-weight:700;
+  background:rgba(74,222,128,0.12);color:var(--green);border:1px solid rgba(74,222,128,0.25);
+}
+.pulse-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+.hamburger{display:none;flex-direction:column;gap:4px;padding:6px;margin-right:auto}
+.hamburger span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:var(--transition)}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+
+/* ── HERO ── */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;flex-direction:column;overflow:hidden;
+  background:radial-gradient(ellipse at 20% 60%,rgba(196,160,68,0.08) 0%,transparent 60%),
+             radial-gradient(ellipse at 80% 20%,rgba(196,160,68,0.05) 0%,transparent 50%),
+             linear-gradient(135deg,var(--bg) 0%,var(--bg2) 100%);
+}
+.hero-swiper{flex:1;min-height:100vh}
+.swiper-slide.hero-slide{
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:80px 2rem 120px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.slide-bg{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  opacity:.08;
+}
+.slide-emoji{
+  font-size:clamp(6rem,18vw,16rem);
+  position:absolute;
+  opacity:.06;
+  right:-2rem;top:50%;transform:translateY(-50%);
+  pointer-events:none;animation:floatSlow 8s ease-in-out infinite;
+  filter:drop-shadow(0 0 60px rgba(196,160,68,0.2));
+}
+@keyframes floatSlow{0%,100%{transform:translateY(-50%) rotate(-5deg)}50%{transform:translateY(-55%) rotate(5deg)}}
+.slide-content{position:relative;z-index:2;max-width:750px}
+.slide-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--gold-10);border:1px solid var(--gold-30);
+  color:var(--gold);padding:.4rem 1.2rem;border-radius:50px;
+  font-size:.85rem;font-weight:700;margin-bottom:1.5rem;
+  animation:slideDown .8s ease .2s both;
+}
+.slide-title{
+  font-size:clamp(2.2rem,7vw,4.5rem);font-weight:900;
+  line-height:1.15;margin-bottom:1rem;
+  animation:slideDown .8s ease .4s both;
+}
+.slide-title .gold{
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 60%,var(--gold-pale) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.slide-desc{
+  font-size:1.05rem;color:var(--text-muted);line-height:1.8;
+  margin-bottom:2rem;animation:slideDown .8s ease .6s both;
+}
+.slide-btns{
+  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;
+  animation:slideDown .8s ease .8s both;
+}
+@keyframes slideDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.8rem 2rem;
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);
+  color:#1a1006;font-family:var(--font);font-size:1rem;font-weight:800;
+  border-radius:50px;border:none;cursor:pointer;
+  transition:var(--transition);
+  box-shadow:0 4px 25px rgba(196,160,68,0.40);
+  white-space:nowrap;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 35px rgba(196,160,68,0.55)}
+.btn-primary.sm{padding:.55rem 1.4rem;font-size:.88rem}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.8rem 2rem;
+  background:transparent;color:var(--gold);
+  font-family:var(--font);font-size:1rem;font-weight:700;
+  border-radius:50px;border:2px solid var(--gold);
+  cursor:pointer;transition:var(--transition);white-space:nowrap;
+}
+.btn-outline:hover{background:var(--gold-10);transform:translateY(-2px)}
+.btn-outline.sm{padding:.55rem 1.4rem;font-size:.88rem}
+
+/* Hero waves */
+.hero-waves{
+  position:absolute;bottom:0;left:0;right:0;
+  height:120px;pointer-events:none;z-index:3;
+}
+.wave{position:absolute;bottom:0;left:0;right:0;width:100%;height:100%}
+.wave-1{animation:waveAnim 8s ease-in-out infinite}
+.wave-2{animation:waveAnim 12s ease-in-out infinite reverse}
+@keyframes waveAnim{0%,100%{transform:translateX(0)}50%{transform:translateX(-2%)}}
+.hero-bubbles{position:absolute;inset:0;pointer-events:none;z-index:1}
+.bubble{
+  position:absolute;border-radius:50%;
+  border:1px solid rgba(196,160,68,0.2);
+  background:radial-gradient(circle at 30% 30%,rgba(196,160,68,0.12),rgba(196,160,68,0.02));
+  animation:floatBubble linear infinite;
+}
+.bubble:nth-child(1){width:60px;height:60px;left:8%;animation-duration:14s;bottom:-60px}
+.bubble:nth-child(2){width:35px;height:35px;left:22%;animation-duration:10s;animation-delay:2s;bottom:-35px}
+.bubble:nth-child(3){width:80px;height:80px;left:58%;animation-duration:17s;animation-delay:1s;bottom:-80px}
+.bubble:nth-child(4){width:25px;height:25px;left:72%;animation-duration:12s;animation-delay:3s;bottom:-25px}
+.bubble:nth-child(5){width:50px;height:50px;left:88%;animation-duration:13s;animation-delay:.5s;bottom:-50px}
+@keyframes floatBubble{
+  0%{transform:translateY(0) scale(1);opacity:.6}
+  100%{transform:translateY(-110vh) scale(.5);opacity:0}
+}
+
+/* Swiper pagination + nav */
+.hero-swiper .swiper-pagination-bullet{background:var(--gold-light);opacity:.5;width:8px;height:8px}
+.hero-swiper .swiper-pagination-bullet-active{background:var(--gold);opacity:1;width:24px;border-radius:4px;transition:.3s}
+.hero-swiper .swiper-button-next,.hero-swiper .swiper-button-prev{
+  color:var(--gold);
+  background:var(--gold-10);backdrop-filter:blur(10px);
+  width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--glass-bdr);
+}
+.hero-swiper .swiper-button-next::after,.hero-swiper .swiper-button-prev::after{font-size:.9rem;font-weight:900}
+
+/* ── STATS STRIP ── */
+.stats-strip{
+  background:linear-gradient(135deg,var(--bg2) 0%,var(--bg3) 100%);
+  border-top:1px solid var(--glass-bdr);
+  border-bottom:1px solid var(--glass-bdr);
+  padding:2.5rem 1rem;
+}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;
+  max-width:900px;margin:0 auto;text-align:center;
+}
+.stat-item{padding:1rem}
+.stat-num{
+  display:block;font-size:2.2rem;font-weight:900;
+  color:var(--gold);margin-bottom:.25rem;
+  font-variant-numeric:tabular-nums;
+}
+.stat-label{font-size:.85rem;color:var(--text-muted);font-weight:600}
+.stat-divider{display:none}
+
+/* ── SECTION HEADER ── */
+.section-header{text-align:center;margin-bottom:3rem}
+.section-tag{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--gold-10);border:1px solid var(--gold-20);
+  color:var(--gold);padding:.35rem 1rem;border-radius:50px;
+  font-size:.8rem;font-weight:700;margin-bottom:1rem;letter-spacing:1px;
+}
+.section-header h2{
+  font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;
+  color:var(--text);margin-bottom:.6rem;line-height:1.2;
+}
+.section-header h2 .gold{
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.section-header p{color:var(--text-muted);font-size:1rem;line-height:1.7}
+
+/* ── FEATURES ── */
+.features-section{padding:6rem 0}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem}
+.feature-card{
+  background:var(--glass);backdrop-filter:blur(16px);
+  border:1px solid var(--glass-bdr);border-radius:var(--radius-lg);
+  padding:2.5rem 1.75rem;text-align:center;
+  transition:var(--transition);
+  opacity:0;transform:translateY(30px);
+}
+.feature-card.visible{opacity:1;transform:translateY(0)}
+.feature-card:hover{
+  border-color:var(--gold);transform:translateY(-8px);
+  box-shadow:var(--shadow),var(--gold-glow);
+}
+.feature-icon-wrap{
+  width:70px;height:70px;margin:0 auto 1.25rem;
+  background:linear-gradient(135deg,var(--gold-10),var(--gold-20));
+  border:1px solid var(--gold-20);border-radius:20px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;
+  transition:var(--transition);
+}
+.feature-card:hover .feature-icon-wrap{
+  background:linear-gradient(135deg,var(--gold-20),var(--gold-30));
+  border-color:var(--gold);
+  box-shadow:0 0 20px rgba(196,160,68,0.25);
+}
+.feature-card h3{font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:.5rem}
+.feature-card p{font-size:.88rem;color:var(--text-muted);line-height:1.7}
+
+/* ── MENU CATEGORIES CAROUSEL ── */
+.menu-section{padding:5rem 0;background:linear-gradient(180deg,transparent,var(--bg2) 30%,var(--bg2) 70%,transparent)}
+.cat-swiper{padding:1rem .5rem 3rem}
+.cat-slide{height:auto}
+.cat-card{
+  background:var(--glass);backdrop-filter:blur(16px);
+  border:1px solid var(--glass-bdr);border-radius:var(--radius-lg);
+  overflow:hidden;cursor:pointer;
+  transition:var(--transition);height:100%;
+  display:flex;flex-direction:column;
+}
+.cat-card:hover{
+  border-color:var(--gold);transform:translateY(-6px);
+  box-shadow:var(--shadow),var(--gold-glow);
+}
+.cat-img{
+  height:150px;display:flex;align-items:center;justify-content:center;
+  font-size:3.5rem;
+  background:linear-gradient(135deg,var(--gold-10),rgba(196,160,68,0.05));
+  position:relative;overflow:hidden;
+  transition:var(--transition);
+}
+.cat-card:hover .cat-img{background:linear-gradient(135deg,var(--gold-15),var(--gold-10))}
+.cat-img::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:40px;background:linear-gradient(transparent,var(--bg2));
+}
+.cat-body{padding:1.25rem 1.25rem 1.5rem;flex:1;display:flex;flex-direction:column}
+.cat-body h3{font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:.3rem}
+.cat-body p{font-size:.82rem;color:var(--text-muted);margin-bottom:1rem;flex:1;line-height:1.5}
+.cat-footer{display:flex;align-items:center;justify-content:space-between}
+.cat-count{
+  display:inline-flex;align-items:center;gap:.3rem;
+  background:var(--gold-10);color:var(--gold);
+  border-radius:50px;padding:.2rem .7rem;font-size:.75rem;font-weight:700;
+}
+.cat-view-btn{
+  display:none;padding:.45rem 1rem;
+  background:var(--gold);color:#1a1006;
+  border-radius:50px;font-size:.78rem;font-weight:800;
+  font-family:var(--font);border:none;cursor:pointer;
+  transition:var(--transition);
+}
+.cat-card:hover .cat-view-btn{display:block}
+.cat-card:hover .cat-count{display:none}
+
+/* Swiper nav gold */
+.swiper-button-next,.swiper-button-prev{
+  color:var(--gold) !important;
+  background:var(--glass);backdrop-filter:blur(10px);
+  width:40px !important;height:40px !important;border-radius:50%;
+  border:1px solid var(--glass-bdr);
+}
+.swiper-button-next::after,.swiper-button-prev::after{font-size:.9rem !important;font-weight:900 !important}
+.swiper-pagination-bullet{background:var(--gold-light) !important;opacity:.4 !important}
+.swiper-pagination-bullet-active{background:var(--gold) !important;opacity:1 !important}
+
+/* ── GALLERY ── */
+.gallery-section{padding:5rem 0}
+.gallery-swiper{border-radius:var(--radius-lg);overflow:hidden}
+.gallery-slide{
+  height:380px;display:flex;align-items:center;justify-content:center;
+  border-radius:var(--radius-lg);overflow:hidden;position:relative;
+  background:var(--bg3);
+  font-size:8rem;
+}
+.gallery-slide::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(12,10,6,.85));
+  z-index:1;
+}
+.gallery-label{
+  position:absolute;bottom:1.5rem;right:0;left:0;z-index:2;
+  text-align:center;font-weight:800;font-size:1.1rem;color:var(--text);
+  padding:0 1rem;
+}
+
+/* ── TESTIMONIALS ── */
+.testi-section{padding:5rem 0;background:linear-gradient(180deg,transparent,var(--bg2) 30%,var(--bg2) 70%,transparent)}
+.testi-swiper{padding:1rem .5rem 3rem}
+.testi-card{
+  background:var(--glass);backdrop-filter:blur(16px);
+  border:1px solid var(--glass-bdr);border-radius:var(--radius-lg);
+  padding:2rem;transition:var(--transition);
+}
+.testi-card:hover{border-color:var(--gold);box-shadow:var(--gold-glow)}
+.testi-stars{color:var(--gold);font-size:1.1rem;margin-bottom:1rem}
+.testi-text{font-size:.92rem;color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:.75rem}
+.testi-avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;flex-shrink:0;
+}
+.testi-name{font-weight:800;color:var(--text);font-size:.9rem}
+.testi-date{font-size:.75rem;color:var(--text-dim)}
+
+/* ── CONTACT ── */
+.contact-section{padding:5rem 0}
+.contact-wrap{
+  background:var(--glass);backdrop-filter:blur(16px);
+  border:1px solid var(--glass-bdr);border-radius:var(--radius-lg);
+  overflow:hidden;
+}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr}
+.contact-info-side{padding:3rem;display:flex;flex-direction:column;gap:1.5rem}
+.contact-info-side h2{font-size:1.8rem;font-weight:900;color:var(--text);margin-bottom:.25rem}
+.contact-info-side > p{color:var(--text-muted);font-size:.95rem}
+.cinfo-item{
+  display:flex;align-items:flex-start;gap:1rem;
+  padding:1rem 1.25rem;border-radius:var(--radius);
+  background:var(--gold-10);border:1px solid var(--glass-bdr);
+  transition:var(--transition);cursor:pointer;text-decoration:none;color:inherit;
+}
+.cinfo-item:hover{border-color:var(--gold);transform:translateX(-4px)}
+.cinfo-icon{font-size:1.4rem;flex-shrink:0}
+.cinfo-label{font-size:.75rem;color:var(--text-dim);margin-bottom:2px;display:block}
+.cinfo-val{font-size:.9rem;font-weight:700;color:var(--text);line-height:1.5}
+.contact-map-side{
+  background:linear-gradient(135deg,var(--gold-10),rgba(196,160,68,0.03));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;
+  padding:3rem;border-right:1px solid var(--glass-bdr);text-align:center;
+}
+[html[dir="ltr"]] .contact-map-side{border-right:none;border-left:1px solid var(--glass-bdr)}
+.map-pin-icon{font-size:4rem;animation:mapPin 3s ease-in-out infinite}
+@keyframes mapPin{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.map-address{color:var(--text-muted);font-size:.9rem;line-height:1.7}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--bg2);border-top:1px solid var(--glass-bdr);
+  padding:3rem 1.5rem 1.5rem;
+}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;
+  margin-bottom:2.5rem;
+}
+.footer-brand .nav-logo{margin-bottom:1rem}
+.footer-brand p{font-size:.88rem;color:var(--text-muted);line-height:1.7;max-width:300px}
+.footer-social{display:flex;gap:.75rem;margin-top:1.25rem;flex-wrap:wrap}
+.social-link{
+  width:38px;height:38px;border-radius:10px;
+  background:var(--gold-10);border:1px solid var(--glass-bdr);
+  color:var(--gold);display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;transition:var(--transition);
+}
+.social-link:hover{background:var(--gold);color:#1a1006;border-color:var(--gold)}
+.footer-col h4{font-size:.95rem;font-weight:800;color:var(--text);margin-bottom:1.25rem}
+.footer-col ul li{margin-bottom:.6rem}
+.footer-col ul li a{font-size:.85rem;color:var(--text-muted);transition:var(--transition)}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-bottom{
+  border-top:1px solid var(--glass-bdr);padding-top:1.5rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+}
+.footer-bottom p{font-size:.8rem;color:var(--text-dim)}
+.footer-bottom .gold{color:var(--gold)}
+
+/* ── FLOATING BUTTONS ── */
+.wa-float{
+  position:fixed;bottom:2rem;left:2rem;z-index:500;
+  width:58px;height:58px;border-radius:50%;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:#fff;font-size:1.5rem;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,0.5);
+  transition:var(--transition);text-decoration:none;
+  animation:waPop .5s 3s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes waPop{from{transform:scale(0)}to{transform:scale(1)}}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.65)}
+.wa-tooltip{
+  position:absolute;left:calc(100% + .6rem);top:50%;transform:translateY(-50%);
+  background:var(--bg3);color:var(--text);
+  padding:.35rem .8rem;border-radius:8px;font-size:.8rem;font-weight:700;
+  white-space:nowrap;border:1px solid var(--glass-bdr);
+  opacity:0;pointer-events:none;transition:var(--transition);
+}
+.wa-float:hover .wa-tooltip{opacity:1}
+
+.back-top{
+  position:fixed;bottom:2rem;right:2rem;z-index:500;
+  width:44px;height:44px;border-radius:12px;
+  background:var(--gold);color:#1a1006;font-size:1rem;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(196,160,68,0.45);
+  transition:var(--transition);cursor:pointer;
+  opacity:0;pointer-events:none;
+}
+.back-top.visible{opacity:1;pointer-events:all}
+.back-top:hover{transform:translateY(-3px);box-shadow:0 6px 28px rgba(196,160,68,0.60)}
+
+/* ── BOTTOM NAV (mobile) ── */
+.bottom-nav{
+  position:fixed;bottom:0;left:0;right:0;z-index:900;
+  background:rgba(12,10,6,.97);backdrop-filter:blur(20px);
+  border-top:1px solid var(--glass-bdr);
+  display:none;justify-content:space-around;
+  padding:.5rem 0 calc(.5rem + env(safe-area-inset-bottom));
+}
+[data-theme="light"] .bottom-nav{background:rgba(253,251,245,.97)}
+.bn-item{
+  display:flex;flex-direction:column;align-items:center;gap:.15rem;
+  padding:.4rem 1.2rem;color:var(--text-muted);
+  font-family:var(--font);font-size:.68rem;font-weight:700;
+  border-radius:10px;transition:var(--transition);
+  cursor:pointer;
+}
+.bn-item.active,.bn-item:hover{color:var(--gold)}
+.bn-icon{font-size:1.3rem}
+
+/* ── FULL MENU OVERLAY ── */
+.menu-overlay{
+  position:fixed;inset:0;z-index:2000;
+  background:var(--bg);overflow-y:auto;
+  transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);
+}
+[dir="ltr"] .menu-overlay{transform:translateX(-100%)}
+.menu-overlay.open{transform:translateX(0)}
+.menu-header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(12,10,6,.95);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--glass-bdr);
+  padding:1rem 1.5rem;
+  display:flex;align-items:center;gap:1rem;
+}
+[data-theme="light"] .menu-header{background:rgba(253,251,245,.95)}
+.menu-header h2{flex:1;font-size:1.3rem;font-weight:900;color:var(--text)}
+.close-btn{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--gold-10);border:1px solid var(--glass-bdr);
+  color:var(--text);font-size:1rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:var(--transition);cursor:pointer;
+}
+.close-btn:hover{background:rgba(239,68,68,.2);border-color:var(--red);color:var(--red)}
+.menu-search{
+  padding:1rem 1.5rem;
+  position:sticky;top:65px;z-index:9;
+  background:var(--bg);border-bottom:1px solid var(--glass-bdr);
+}
+[data-theme="light"] .menu-search{background:var(--bg)}
+.search-wrap{position:relative;max-width:500px;margin:0 auto}
+.search-wrap input{
+  width:100%;padding:.8rem 1rem .8rem 3rem;
+  background:var(--glass);border:1px solid var(--glass-bdr);
+  border-radius:50px;color:var(--text);
+  font-family:var(--font);font-size:.9rem;outline:none;
+  transition:var(--transition);
+}
+[dir="rtl"] .search-wrap input{padding:.8rem 3rem .8rem 1rem}
+.search-wrap input::placeholder{color:var(--text-dim)}
+.search-wrap input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(196,160,68,0.15)}
+.search-wrap i{
+  position:absolute;top:50%;right:1rem;transform:translateY(-50%);
+  color:var(--text-muted);pointer-events:none;
+}
+[dir="rtl"] .search-wrap i{right:auto;left:1rem}
+.menu-body{padding:1.5rem}
+.menu-cats-tabs{
+  display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem;padding-bottom:1rem;
+  border-bottom:1px solid var(--glass-bdr);
+  overflow-x:auto;
+}
+.cat-tab{
+  padding:.4rem 1rem;border-radius:50px;
+  background:var(--gold-10);border:1px solid var(--glass-bdr);
+  color:var(--text-muted);font-family:var(--font);font-size:.82rem;font-weight:700;
+  cursor:pointer;transition:var(--transition);white-space:nowrap;
+}
+.cat-tab:hover,.cat-tab.active{background:var(--gold);color:#1a1006;border-color:var(--gold)}
+.items-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem;
+}
+.item-card{
+  background:var(--glass);backdrop-filter:blur(12px);
+  border:1px solid var(--glass-bdr);border-radius:var(--radius-lg);
+  overflow:hidden;cursor:pointer;transition:var(--transition);
+  animation:cardAppear .4s ease both;
+}
+@keyframes cardAppear{from{opacity:0;transform:translateY(15px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.item-card:hover{border-color:var(--gold);transform:translateY(-5px);box-shadow:var(--shadow),var(--gold-glow)}
+.item-img{
+  height:110px;display:flex;align-items:center;justify-content:center;
+  font-size:3rem;background:linear-gradient(135deg,var(--gold-10),rgba(196,160,68,0.03));
+  border-bottom:1px solid var(--glass-bdr);
+}
+.item-body{padding:1rem}
+.item-body h3{font-size:.95rem;font-weight:800;color:var(--text);margin-bottom:.35rem;line-height:1.4}
+.item-desc{font-size:.8rem;color:var(--text-muted);line-height:1.5;margin-bottom:.75rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.item-footer{display:flex;align-items:center;justify-content:space-between}
+.item-price{font-size:1rem;font-weight:900;color:var(--gold)}
+.item-price .curr{font-size:.72rem;color:var(--text-muted);font-weight:600;margin-right:2px}
+.price-market{font-size:.75rem;color:var(--text-dim);font-style:italic}
+.item-arrow{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--gold-10);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;font-size:.8rem;
+  transition:var(--transition);
+}
+.item-card:hover .item-arrow{background:var(--gold);color:#1a1006}
+.empty-state{
+  grid-column:1/-1;text-align:center;padding:4rem 2rem;
+  color:var(--text-muted);
+}
+.empty-state .e-icon{font-size:3rem;margin-bottom:1rem}
+.empty-state h3{font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:.5rem}
+
+/* ── ITEM MODAL ── */
+.item-modal{
+  position:fixed;inset:0;z-index:3000;
+  background:rgba(12,10,6,.88);backdrop-filter:blur(10px);
+  display:flex;align-items:center;justify-content:center;padding:1rem;
+  opacity:0;pointer-events:none;transition:opacity .3s ease;
+}
+.item-modal.open{opacity:1;pointer-events:all}
+.item-modal-card{
+  width:100%;max-width:460px;
+  background:var(--bg2);border:1px solid var(--glass-bdr);
+  border-radius:var(--radius-lg);overflow:hidden;
+  transform:translateY(30px) scale(.97);
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:0 30px 80px rgba(0,0,0,.7);
+}
+.item-modal.open .item-modal-card{transform:translateY(0) scale(1)}
+.imodal-img{
+  height:200px;background:linear-gradient(135deg,var(--gold-10),rgba(196,160,68,0.03));
+  display:flex;align-items:center;justify-content:center;font-size:6rem;
+  position:relative;
+}
+.imodal-close{
+  position:absolute;top:.75rem;left:.75rem;
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(12,10,6,.8);border:1px solid var(--glass-bdr);
+  color:var(--text);font-size:.85rem;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:var(--transition);
+}
+.imodal-close:hover{background:rgba(239,68,68,.25);border-color:var(--red);color:var(--red)}
+.imodal-body{padding:1.5rem}
+.imodal-cat{
+  display:inline-block;background:var(--gold-10);color:var(--gold);
+  border-radius:50px;padding:.22rem .7rem;font-size:.75rem;font-weight:700;
+  margin-bottom:.75rem;
+}
+.imodal-title{font-size:1.4rem;font-weight:900;color:var(--text);margin-bottom:.5rem;line-height:1.3}
+.imodal-desc{font-size:.88rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem}
+.imodal-price{font-size:1.7rem;font-weight:900;color:var(--gold);margin-bottom:1.5rem}
+.imodal-actions{display:flex;gap:.75rem;flex-wrap:wrap}
+.imodal-actions .btn-primary,.imodal-actions .btn-outline{flex:1;justify-content:center}
+
+/* ── SCROLL ANIMATIONS ── */
+[data-reveal]{opacity:0;transform:translateY(25px);transition:opacity .6s ease,transform .6s ease}
+[data-reveal].visible{opacity:1;transform:translateY(0)}
+
+/* ── TOAST ── */
+.toast{
+  position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:var(--gold);color:#1a1006;
+  padding:.65rem 1.5rem;border-radius:50px;
+  font-size:.88rem;font-weight:800;font-family:var(--font);
+  z-index:5000;opacity:0;transition:all .3s ease;pointer-events:none;white-space:nowrap;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+}
+@media(max-width:768px){
+  body{padding-bottom:70px}
+  .bottom-nav{display:flex}
+  .navbar .nav-links{display:none}
+  .navbar .nav-links.mobile-open{
+    display:flex;flex-direction:column;
+    position:absolute;top:100%;right:0;left:0;
+    background:rgba(12,10,6,.98);backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--glass-bdr);
+    padding:1rem;gap:.25rem;
+  }
+  [data-theme="light"] .navbar .nav-links.mobile-open{background:rgba(253,251,245,.98)}
+  .nav-status,.nav-controls .lang-btn{display:none}
+  .hamburger{display:flex}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-map-side{border-right:none !important;border-left:none !important;border-top:1px solid var(--glass-bdr)}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-brand p{max-width:100%}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .wa-float{bottom:5.5rem;left:1rem}
+  .back-top{bottom:5.5rem;right:1rem}
+  .gallery-slide{height:280px}
+}
+@media(max-width:480px){
+  .slide-title{font-size:2rem}
+  .items-grid{grid-template-columns:1fr 1fr}
+  .item-modal{align-items:flex-end;padding:0}
+  .item-modal-card{max-width:100%;border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+}
+@media(min-width:769px){
+  .bottom-nav{display:none !important}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════ LOADER ════════════════════ -->
+<div id="loader">
+  <img src="data:image/webp;base64,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" class="loader-logo" alt="أسماك الشاطئ">
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <div class="loader-text" data-ar="جاري التحميل..." data-en="Loading...">جاري التحميل...</div>
+</div>
+
+<!-- ════════════════════ NAVBAR ════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-logo" onclick="scrollToTop()">
+      <img src="data:image/webp;base64,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" alt="أسماك الشاطئ">
+      <span class="logo-text" data-ar="أسماك الشاطئ" data-en="El Shati"></span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><button class="nav-link active" onclick="scrollToSection('hero')" data-ar="الرئيسية" data-en="Home">الرئيسية</button></li>
+      <li><button class="nav-link" onclick="openMenu()" data-ar="المنيو" data-en="Menu">المنيو</button></li>
+      <li><button class="nav-link" onclick="scrollToSection('features')" data-ar="مميزاتنا" data-en="Features">مميزاتنا</button></li>
+      <li><button class="nav-link" onclick="scrollToSection('contact')" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</button></li>
+    </ul>
+    <div class="nav-controls">
+      <div class="nav-status"><span class="pulse-dot"></span><span data-ar="مفتوح" data-en="Open">مفتوح</span></div>
+      <button class="ctrl-btn lang-btn" id="langBtn" onclick="toggleLang()" title="Switch Language">EN</button>
+      <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bubbles">
+    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+    <span class="bubble"></span><span class="bubble"></span>
+  </div>
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide hero-slide">
+        <span class="slide-emoji">🐠</span>
+        <div class="slide-content">
+          <div class="slide-badge"><i class="fa-solid fa-star"></i><span data-ar="مطعم أسماك فاخر منذ ٢٠٠٥" data-en="Premium Seafood Since 2005">مطعم أسماك فاخر منذ ٢٠٠٥</span></div>
+          <h1 class="slide-title" data-ar="أسماك الشاطئ<br><span class='gold'>للمأكولات البحرية</span>" data-en="El Shati<br><span class='gold'>Seafood Restaurant</span>">أسماك الشاطئ<br><span class="gold">للمأكولات البحرية</span></h1>
+          <p class="slide-desc" data-ar="من أقدم مطاعم الأسماك في مدينة نصر · خبرة تمتد لأكثر من ٢٠ عامًا<br>في جميع أصناف وأنواع الأسماك والمأكولات البحرية" data-en="One of Nasr City's finest seafood restaurants · Over 20 years of excellence<br>in fresh fish and premium seafood cuisine">من أقدم مطاعم الأسماك في مدينة نصر · خبرة تمتد لأكثر من ٢٠ عامًا<br>في جميع أصناف وأنواع الأسماك والمأكولات البحرية</p>
+          <div class="slide-btns">
+            <button class="btn-primary" onclick="openMenu()"><i class="fa-solid fa-utensils"></i><span data-ar="عرض المنيو" data-en="View Menu">عرض المنيو</span></button>
+            <a href="https://wa.me/201001228570" target="_blank" class="btn-outline"><i class="fa-brands fa-whatsapp"></i><span data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide hero-slide">
+        <span class="slide-emoji">🦐</span>
+        <div class="slide-content">
+          <div class="slide-badge"><i class="fa-solid fa-fish"></i><span data-ar="طازج يوميًا" data-en="Fresh Daily">طازج يوميًا</span></div>
+          <h1 class="slide-title" data-ar="أسماك طازجة<br><span class='gold'>يومًا بعد يوم</span>" data-en="Fresh Fish<br><span class='gold'>Every Single Day</span>">أسماك طازجة<br><span class="gold">يومًا بعد يوم</span></h1>
+          <p class="slide-desc" data-ar="نختار أجود أنواع الأسماك الطازجة كل يوم من أفضل المصادر<br>لضمان أعلى جودة ومذاق لا يُنسى" data-en="We handpick the finest fresh fish daily from the best sources<br>to guarantee top quality and an unforgettable taste">نختار أجود أنواع الأسماك الطازجة كل يوم من أفضل المصادر<br>لضمان أعلى جودة ومذاق لا يُنسى</p>
+          <div class="slide-btns">
+            <button class="btn-primary" onclick="openMenu('fish')"><i class="fa-solid fa-fish"></i><span data-ar="أصناف الأسماك" data-en="Fish Menu">أصناف الأسماك</span></button>
+            <a href="tel:+201001228570" class="btn-outline"><i class="fa-solid fa-phone"></i><span data-ar="اتصل بنا" data-en="Call Us">اتصل بنا</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide hero-slide">
+        <span class="slide-emoji">🦞</span>
+        <div class="slide-content">
+          <div class="slide-badge"><i class="fa-solid fa-crown"></i><span data-ar="تجربة لا تُنسى" data-en="Unforgettable Experience">تجربة لا تُنسى</span></div>
+          <h1 class="slide-title" data-ar="قشريات ووليمة<br><span class='gold'>بمذاق استثنائي</span>" data-en="Shellfish & Feasts<br><span class='gold'>Exceptional Flavor</span>">قشريات ووليمة<br><span class="gold">بمذاق استثنائي</span></h1>
+          <p class="slide-desc" data-ar="استمتع بأفخر أنواع القشريات والولائم البحرية<br>في أجواء ساحلية مريحة وخدمة متميزة" data-en="Enjoy the finest shellfish and seafood banquets<br>in a relaxing coastal atmosphere with exceptional service">استمتع بأفخر أنواع القشريات والولائم البحرية<br>في أجواء ساحلية مريحة وخدمة متميزة</p>
+          <div class="slide-btns">
+            <button class="btn-primary" onclick="openMenu('shellfish')"><i class="fa-solid fa-shrimp"></i><span data-ar="القشريات" data-en="Shellfish">القشريات</span></button>
+            <button class="btn-outline" onclick="scrollToSection('contact')"><i class="fa-solid fa-location-dot"></i><span data-ar="موقعنا" data-en="Location">موقعنا</span></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+  <div class="hero-waves">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none" class="wave wave-1">
+      <path fill="rgba(196,160,68,0.08)" d="M0,60L48,55C96,50,192,40,288,45C384,50,480,70,576,72C672,75,768,60,864,52C960,45,1056,45,1152,48C1248,52,1344,58,1392,60L1440,63L1440,120L0,120Z"></path>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none" class="wave wave-2">
+      <path fill="rgba(196,160,68,0.04)" d="M0,80L48,72C96,65,192,50,288,48C384,47,480,60,576,65C672,70,768,68,864,60C960,52,1056,40,1152,38C1248,37,1344,48,1392,53L1440,58L1440,120L0,120Z"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- ════════════════════ STATS ════════════════════ -->
+<div class="stats-strip" id="stats">
+  <div class="stats-grid">
+    <div class="stat-item" data-reveal>
+      <span class="stat-num" data-count="20" data-suffix="+">٠</span>
+      <span class="stat-label" data-ar="سنة خبرة" data-en="Years Experience">سنة خبرة</span>
+    </div>
+    <div class="stat-item" data-reveal>
+      <span class="stat-num" data-count="10" data-suffix="">٠</span>
+      <span class="stat-label" data-ar="قوائم متنوعة" data-en="Menu Categories">قوائم متنوعة</span>
+    </div>
+    <div class="stat-item" data-reveal>
+      <span class="stat-num" data-count="100" data-suffix="+">٠</span>
+      <span class="stat-label" data-ar="صنف لذيذ" data-en="Delicious Dishes">صنف لذيذ</span>
+    </div>
+    <div class="stat-item" data-reveal>
+      <span class="stat-num" data-count="2005" data-suffix="">٠</span>
+      <span class="stat-label" data-ar="تأسس عام" data-en="Est. Year">تأسس عام</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ FEATURES ════════════════════ -->
+<section class="features-section" id="features">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag"><i class="fa-solid fa-sparkles"></i><span data-ar="لماذا نحن؟" data-en="Why Us?">لماذا نحن؟</span></div>
+      <h2><span class="gold" data-ar="مميزاتنا" data-en="Our">مميزاتنا</span> <span data-ar="التي تجعلنا الأفضل" data-en="Features">التي تجعلنا الأفضل</span></h2>
+      <p data-ar="نلتزم بتقديم أفضل تجربة مأكولات بحرية" data-en="We are committed to delivering the finest seafood experience">نلتزم بتقديم أفضل تجربة مأكولات بحرية</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card" style="transition-delay:0s">
+        <div class="feature-icon-wrap">🎣</div>
+        <h3 data-ar="أسماك طازجة يوميًا" data-en="Fresh Fish Daily">أسماك طازجة يوميًا</h3>
+        <p data-ar="نختار أجود أنواع الأسماك الطازجة يوميًا من أفضل المصادر لضمان أعلى جودة وأشهى مذاق" data-en="We handpick the finest fresh fish daily from premium sources to ensure top quality and the most delicious flavor">نختار أجود أنواع الأسماك الطازجة يوميًا من أفضل المصادر لضمان أعلى جودة وأشهى مذاق</p>
+      </div>
+      <div class="feature-card" style="transition-delay:.1s">
+        <div class="feature-icon-wrap">👨‍🍳</div>
+        <h3 data-ar="طهاة محترفون" data-en="Professional Chefs">طهاة محترفون</h3>
+        <p data-ar="فريق من أمهر الطهاة المتخصصين في المأكولات البحرية بخبرة تمتد لسنوات طويلة" data-en="A team of expert chefs specializing in seafood cuisine with years of culinary excellence">فريق من أمهر الطهاة المتخصصين في المأكولات البحرية بخبرة تمتد لسنوات طويلة</p>
+      </div>
+      <div class="feature-card" style="transition-delay:.2s">
+        <div class="feature-icon-wrap">🌊</div>
+        <h3 data-ar="تجربة فريدة" data-en="Unique Experience">تجربة فريدة</h3>
+        <p data-ar="أجواء ساحلية مريحة وخدمة متميزة تجعل كل وجبة تجربة لا تُنسى مع العائلة والأصدقاء" data-en="A relaxing coastal ambiance and distinguished service make every meal an unforgettable experience">أجواء ساحلية مريحة وخدمة متميزة تجعل كل وجبة تجربة لا تُنسى مع العائلة والأصدقاء</p>
+      </div>
+      <div class="feature-card" style="transition-delay:.3s">
+        <div class="feature-icon-wrap">🚗</div>
+        <h3 data-ar="تيك أواي متاح" data-en="Takeaway Available">تيك أواي متاح</h3>
+        <p data-ar="استمتع بطعامنا الشهي في منزلك مع خدمة التيك أواي المتاحة طوال أوقات العمل" data-en="Enjoy our delicious food at home with our convenient takeaway service available throughout working hours">استمتع بطعامنا الشهي في منزلك مع خدمة التيك أواي المتاحة طوال أوقات العمل</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ MENU CATEGORIES CAROUSEL ════════════════════ -->
+<section class="menu-section" id="menu-preview">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag"><i class="fa-solid fa-utensils"></i><span data-ar="قائمتنا" data-en="Our Menu">قائمتنا</span></div>
+      <h2><span data-ar="اكتشف " data-en="Explore Our ">اكتشف </span><span class="gold" data-ar="قائمتنا الشهية" data-en="Delicious Menu">قائمتنا الشهية</span></h2>
+      <p data-ar="تشكيلة واسعة من أشهى المأكولات البحرية الطازجة" data-en="A wide selection of the freshest and most delicious seafood dishes">تشكيلة واسعة من أشهى المأكولات البحرية الطازجة</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="swiper cat-swiper">
+      <div class="swiper-wrapper" id="categoriesCarousel"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ GALLERY ════════════════════ -->
+<section class="gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag"><i class="fa-solid fa-camera"></i><span data-ar="معرض الصور" data-en="Gallery">معرض الصور</span></div>
+      <h2><span class="gold" data-ar="لقطات من" data-en="Glimpses from">لقطات من</span> <span data-ar="مطعمنا" data-en="Our Restaurant">مطعمنا</span></h2>
+    </div>
+    <div class="swiper gallery-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide gallery-slide" style="background:linear-gradient(135deg,#1a1206,#2a1e08)">🐟<div class="gallery-label" data-ar="أسماك الشاطئ الطازجة" data-en="Fresh El Shati Fish">أسماك الشاطئ الطازجة</div></div>
+        <div class="swiper-slide gallery-slide" style="background:linear-gradient(135deg,#0c1a0a,#1a2e0c)">🦐<div class="gallery-label" data-ar="جمبري مميز" data-en="Premium Shrimp">جمبري مميز</div></div>
+        <div class="swiper-slide gallery-slide" style="background:linear-gradient(135deg,#1a0c06,#2a160a)">🦞<div class="gallery-label" data-ar="قشريات فاخرة" data-en="Luxury Shellfish">قشريات فاخرة</div></div>
+        <div class="swiper-slide gallery-slide" style="background:linear-gradient(135deg,#0a0c1a,#0c1228)">🍲<div class="gallery-label" data-ar="شوربة سي فود" data-en="Seafood Soup">شوربة سي فود</div></div>
+        <div class="swiper-slide gallery-slide" style="background:linear-gradient(135deg,#1a1606,#2a2408)">🍚<div class="gallery-label" data-ar="أرز الشاطئ" data-en="El Shati Rice">أرز الشاطئ</div></div>
+        <div class="swiper-slide gallery-slide" style="background:linear-gradient(135deg,#1a0a0a,#2a1212)">🦀<div class="gallery-label" data-ar="الوليمة الملكية" data-en="Royal Feast">الوليمة الملكية</div></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ TESTIMONIALS ════════════════════ -->
+<section class="testi-section" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag"><i class="fa-solid fa-heart"></i><span data-ar="آراء عملائنا" data-en="Customer Reviews">آراء عملائنا</span></div>
+      <h2><span data-ar="ماذا يقول " data-en="What Our ">ماذا يقول </span><span class="gold" data-ar="عملاؤنا" data-en="Customers Say">عملاؤنا</span></h2>
+      <p data-ar="تقييمات حقيقية من عملائنا الكرام" data-en="Genuine reviews from our valued customers">تقييمات حقيقية من عملائنا الكرام</p>
+    </div>
+    <div class="swiper testi-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-ar='"أحسن مطعم أسماك جربته في مدينة نصر! الجودة ممتازة والخدمة محترمة جداً، والجمبري كان لذيذ جداً. هيفضل مطعمنا المفضل دايمًا"' data-en='"The best seafood restaurant I've tried in Nasr City! Excellent quality, great service, and the shrimp was incredibly delicious. It will always be our favorite restaurant"'>"أحسن مطعم أسماك جربته في مدينة نصر! الجودة ممتازة والخدمة محترمة جداً، والجمبري كان لذيذ جداً. هيفضل مطعمنا المفضل دايمًا"</p>
+          <div class="testi-author"><div class="testi-avatar">😊</div><div><div class="testi-name">أحمد محمد</div><div class="testi-date">مدينة نصر، القاهرة</div></div></div>
+        </div></div>
+        <div class="swiper-slide"><div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-ar='"وليمة الشاطئ كانت تحفة فنية! كل حاجة طازجة ومنظمة ومتنسقة. الأسعار كويسة قوي بالنسبة للجودة. ننصح كل أسرة تيجي تجرب"' data-en='"The Shati Feast was a masterpiece! Everything was fresh, well-presented and organized. The prices are very reasonable for the quality. We recommend every family to come and try it"'>"وليمة الشاطئ كانت تحفة فنية! كل حاجة طازجة ومنظمة ومتنسقة. الأسعار كويسة قوي بالنسبة للجودة. ننصح كل أسرة تيجي تجرب"</p>
+          <div class="testi-author"><div class="testi-avatar">🌟</div><div><div class="testi-name">سارة عبدالله</div><div class="testi-date">القاهرة الجديدة</div></div></div>
+        </div></div>
+        <div class="swiper-slide"><div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-ar='"شوربة السي فود والبطارخ دي حاجة تانية خالص! حاسس إني في مطعم ساحلي فاخر وأنا في مدينة نصر. استمرارية الجودة دي هي اللي بترجعني كل مرة"' data-en='"The seafood soup and bottarga are on another level! I feel like I'm in a luxury coastal restaurant right in Nasr City. The consistent quality is what keeps bringing me back every time"'>"شوربة السي فود والبطارخ دي حاجة تانية خالص! حاسس إني في مطعم ساحلي فاخر وأنا في مدينة نصر. استمرارية الجودة دي هي اللي بترجعني كل مرة"</p>
+          <div class="testi-author"><div class="testi-avatar">🏆</div><div><div class="testi-name">محمود السيد</div><div class="testi-date">مصر الجديدة</div></div></div>
+        </div></div>
+        <div class="swiper-slide"><div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-ar='"من سنة ٢٠١٠ وأنا بيجي هنا. مش بتغيروا من الجودة خالص. الشيف رضا عنده إيد خفيفة وكل أكل بيطلع رائع. مطعم يستاهل التجربة ١٠٠٪"' data-en='"Since 2010 and I keep coming back. The quality never changes. Chef Reda has a magical touch and every dish comes out amazing. A restaurant that 100% deserves a visit"'>"من سنة ٢٠١٠ وأنا بيجي هنا. مش بتغيروا من الجودة خالص. الشيف رضا عنده إيد خفيفة وكل أكل بيطلع رائع. مطعم يستاهل التجربة ١٠٠٪"</p>
+          <div class="testi-author"><div class="testi-avatar">🎯</div><div><div class="testi-name">خالد إبراهيم</div><div class="testi-date">المعادي، القاهرة</div></div></div>
+        </div></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CONTACT ════════════════════ -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag"><i class="fa-solid fa-location-dot"></i><span data-ar="تواصل معنا" data-en="Find Us">تواصل معنا</span></div>
+      <h2><span data-ar="نسعد " data-en="We're Happy to ">نسعد </span><span class="gold" data-ar="بخدمتكم" data-en="Serve You">بخدمتكم</span></h2>
+      <p data-ar="نحن هنا لخدمتكم يومياً" data-en="We are here to serve you every day">نحن هنا لخدمتكم يومياً</p>
+    </div>
+    <div class="contact-wrap" data-reveal>
+      <div class="contact-grid">
+        <div class="contact-info-side">
+          <h2 data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h2>
+          <p data-ar="يسعدنا تلقي طلباتكم واستفساراتكم" data-en="We're delighted to receive your orders and inquiries">يسعدنا تلقي طلباتكم واستفساراتكم</p>
+          <a href="tel:+201001228570" class="cinfo-item">
+            <span class="cinfo-icon">📞</span>
+            <div><span class="cinfo-label" data-ar="هاتف" data-en="Phone">هاتف</span><span class="cinfo-val" dir="ltr">+20 100 122 8570</span></div>
+          </a>
+          <a href="https://wa.me/201001228570" target="_blank" class="cinfo-item">
+            <span class="cinfo-icon">💬</span>
+            <div><span class="cinfo-label" data-ar="واتساب" data-en="WhatsApp">واتساب</span><span class="cinfo-val" data-ar="راسلنا مباشرة" data-en="Message Us Now">راسلنا مباشرة</span></div>
+          </a>
+          <div class="cinfo-item">
+            <span class="cinfo-icon">📍</span>
+            <div><span class="cinfo-label" data-ar="العنوان" data-en="Address">العنوان</span><span class="cinfo-val" data-ar="١٣٤ شارع إبراهيم نوار — موازي لأحمد فخري<br>خلف مستشفى حسبو الدولي — مدينة نصر" data-en="134 Ibrahim Nawar St. — Parallel to Ahmed Fakhry<br>Behind Hesbo International Hospital — Nasr City">١٣٤ شارع إبراهيم نوار — موازي لأحمد فخري<br>خلف مستشفى حسبو الدولي — مدينة نصر</span></div>
+          </div>
+          <div class="cinfo-item">
+            <span class="cinfo-icon">🕐</span>
+            <div><span class="cinfo-label" data-ar="ساعات العمل" data-en="Working Hours">ساعات العمل</span><span class="cinfo-val" data-ar="مفتوح يومياً على مدار الأسبوع" data-en="Open Daily — All Week Long">مفتوح يومياً على مدار الأسبوع</span></div>
+          </div>
+          <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.5rem">
+            <a href="tel:+201001228570" class="btn-primary sm"><i class="fa-solid fa-phone"></i><span data-ar="اتصل الآن" data-en="Call Now">اتصل الآن</span></a>
+            <a href="https://wa.me/201001228570" target="_blank" class="btn-outline sm"><i class="fa-brands fa-whatsapp"></i><span data-ar="واتساب" data-en="WhatsApp">واتساب</span></a>
+          </div>
+        </div>
+        <div class="contact-map-side">
+          <div class="map-pin-icon">📍</div>
+          <h3 style="font-size:1.2rem;font-weight:900;color:var(--text);margin-bottom:.5rem" data-ar="١٣٤ شارع إبراهيم نوار" data-en="134 Ibrahim Nawar St.">١٣٤ شارع إبراهيم نوار</h3>
+          <p class="map-address" data-ar="موازي لأحمد فخري · خلف مستشفى حسبو الدولي<br>مدينة نصر، القاهرة، مصر" data-en="Parallel to Ahmed Fakhry · Behind Hesbo International Hospital<br>Nasr City, Cairo, Egypt">موازي لأحمد فخري · خلف مستشفى حسبو الدولي<br>مدينة نصر، القاهرة، مصر</p>
+          <a href="https://maps.google.com/?q=134+Ibrahim+Nawar+Nasr+City+Cairo" target="_blank" class="btn-primary sm"><i class="fa-solid fa-map-location-dot"></i><span data-ar="فتح الخريطة" data-en="Open Map">فتح الخريطة</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" onclick="scrollToTop()">
+          <img src="data:image/webp;base64,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" alt="أسماك الشاطئ" style="width:40px;height:40px">
+          <span class="logo-text" data-ar="أسماك الشاطئ للمأكولات البحرية" data-en="El Shati Seafood Restaurant"></span>
+        </a>
+        <p data-ar="من أقدم وأشهر مطاعم المأكولات البحرية في مدينة نصر منذ عام ٢٠٠٥. نلتزم بتقديم أجود الأسماك الطازجة وأشهى المأكولات البحرية." data-en="One of the oldest and most renowned seafood restaurants in Nasr City since 2005. We are committed to serving the finest fresh fish and most delicious seafood.">من أقدم وأشهر مطاعم المأكولات البحرية في مدينة نصر منذ عام ٢٠٠٥. نلتزم بتقديم أجود الأسماك الطازجة وأشهى المأكولات البحرية.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/201001228570" target="_blank" class="social-link" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="tel:+201001228570" class="social-link" title="Phone"><i class="fa-solid fa-phone"></i></a>
+          <a href="https://maps.google.com/?q=134+Ibrahim+Nawar+Nasr+City+Cairo" target="_blank" class="social-link" title="Map"><i class="fa-solid fa-location-dot"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+        <ul>
+          <li><a href="#" onclick="scrollToSection('hero')" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+          <li><a href="#" onclick="openMenu()" data-ar="المنيو الكامل" data-en="Full Menu">المنيو الكامل</a></li>
+          <li><a href="#" onclick="scrollToSection('features')" data-ar="مميزاتنا" data-en="Our Features">مميزاتنا</a></li>
+          <li><a href="#" onclick="scrollToSection('testimonials')" data-ar="آراء العملاء" data-en="Reviews">آراء العملاء</a></li>
+          <li><a href="#" onclick="scrollToSection('contact')" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-ar="فئات المنيو" data-en="Menu Categories">فئات المنيو</h4>
+        <ul id="footerMenuLinks"></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 <span class="gold" data-ar="أسماك الشاطئ للمأكولات البحرية" data-en="El Shati Seafood">أسماك الشاطئ للمأكولات البحرية</span>. <span data-ar="جميع الحقوق محفوظة" data-en="All Rights Reserved">جميع الحقوق محفوظة</span></p>
+      <p data-ar="مدينة نصر · القاهرة · مصر" data-en="Nasr City · Cairo · Egypt">مدينة نصر · القاهرة · مصر</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════ FLOATING ════════════════════ -->
+<a href="https://wa.me/201001228570" target="_blank" class="wa-float" title="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="wa-tooltip" data-ar="اطلب عبر واتساب" data-en="Order via WhatsApp">اطلب عبر واتساب</span>
+</a>
+<button class="back-top" id="backTop" onclick="scrollToTop()" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+<!-- ════════════════════ BOTTOM NAV ════════════════════ -->
+<nav class="bottom-nav">
+  <button class="bn-item active" onclick="scrollToSection('hero')"><span class="bn-icon">🏠</span><span data-ar="الرئيسية" data-en="Home">الرئيسية</span></button>
+  <button class="bn-item" onclick="openMenu()"><span class="bn-icon">🍽️</span><span data-ar="المنيو" data-en="Menu">المنيو</span></button>
+  <button class="bn-item" onclick="scrollToSection('contact')"><span class="bn-icon">📞</span><span data-ar="تواصل" data-en="Contact">تواصل</span></button>
+</nav>
+
+<!-- ════════════════════ FULL MENU OVERLAY ════════════════════ -->
+<div id="menuOverlay" class="menu-overlay">
+  <div class="menu-header">
+    <button class="close-btn" onclick="closeMenu()"><i class="fa-solid fa-xmark"></i></button>
+    <h2 data-ar="قائمة الطعام الكاملة" data-en="Full Menu">قائمة الطعام الكاملة</h2>
+  </div>
+  <div class="menu-search">
+    <div class="search-wrap">
+      <input type="text" id="menuSearch" placeholder="ابحث عن طبق..." oninput="handleSearch()">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+  </div>
+  <div class="menu-body">
+    <div class="menu-cats-tabs" id="menuTabs"></div>
+    <div class="items-grid" id="itemsGrid"></div>
+  </div>
+</div>
+
+<!-- ════════════════════ ITEM MODAL ════════════════════ -->
+<div id="itemModal" class="item-modal" onclick="closeItemModal(event)">
+  <div class="item-modal-card">
+    <div class="imodal-img">
+      <button class="imodal-close" onclick="closeItemModal()"><i class="fa-solid fa-xmark"></i></button>
+      <span id="imodalEmoji">🐟</span>
+    </div>
+    <div class="imodal-body">
+      <div class="imodal-cat" id="imodalCat"></div>
+      <h2 class="imodal-title" id="imodalTitle"></h2>
+      <p class="imodal-desc" id="imodalDesc"></p>
+      <div class="imodal-price" id="imodalPrice"></div>
+      <div class="imodal-actions">
+        <a href="https://wa.me/201001228570" target="_blank" class="btn-primary"><i class="fa-brands fa-whatsapp"></i><span data-ar="اطلب عبر واتساب" data-en="Order via WhatsApp">اطلب عبر واتساب</span></a>
+        <a href="tel:+201001228570" class="btn-outline"><i class="fa-solid fa-phone"></i><span data-ar="اتصل للطلب" data-en="Call to Order">اتصل للطلب</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ TOAST ════════════════════ -->
+<div id="toast" class="toast"></div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+/* ============================================================
+   MENU DATA
+   ============================================================ */
+const MENU_DATA = [
+  {
+    id: "takeaway",
+    name: "منيو التيك أواي",
+    icon: "🚗",
+    desc: "طلبات التيك أواي والتوصيل",
+    color: "rgba(212,168,83,0.15)",
+    subcategories: [
+      {
+        name: "الأسماك",
+        items: [
+          { name: "بلطي",       desc: "سمك البلطي الطازج",                   price: "على حسب سعر اليوم", market: true },
+          { name: "بوري",       desc: "سمك البوري الطازج",                   price: "على حسب سعر اليوم", market: true },
+          { name: "قشر بياض",   desc: "قشر بياض طازج",                       price: "على حسب سعر اليوم", market: true },
+          { name: "فيليه بلطي", desc: "فيليه سمك البلطي الطازج",            price: "على حسب سعر اليوم", market: true },
+          { name: "سبيط",       desc: "سبيط بلدي طازج",                      price: "على حسب سعر اليوم", market: true },
+          { name: "وقار بلدي",  desc: "سمك الوقار البلدي",                  price: "على حسب سعر اليوم", market: true },
+          { name: "دنيس",       desc: "سمك الدنيس الطازج",                  price: "على حسب سعر اليوم", market: true },
+          { name: "قاروص",      desc: "سمك القاروص الطازج",                 price: "على حسب سعر اليوم", market: true },
+          { name: "ثعابين",     desc: "ثعابين البحر الطازجة",               price: "على حسب سعر اليوم", market: true },
+          { name: "سهيله",      desc: "سمك السهيلة الطازج",                 price: "على حسب سعر اليوم", market: true },
+          { name: "موسي",       desc: "سمك موسى الطازج",                    price: "على حسب سعر اليوم", market: true },
+          { name: "بربوني",     desc: "سمك البربوني (سلطان إبراهيم)",       price: "على حسب سعر اليوم", market: true },
+          { name: "مكرونة",     desc: "سمك المكرونة البلدي",                price: "على حسب سعر اليوم", market: true },
+          { name: "لوت",        desc: "سمك اللوت الطازج",                   price: "على حسب سعر اليوم", market: true },
+        ]
+      },
+      {
+        name: "الشوربات",
+        items: [
+          { name: "شوربة سي فوود",        desc: "شوربة مأكولات بحرية متنوعة بالخضار والتوابل",   price: "240" },
+          { name: "ملوخية بالجمبري",       desc: "ملوخية طازجة مطبوخة مع الجمبري",               price: "120" },
+          { name: "شوربة فياجرا أحمر",     desc: "شوربة بالمأكولات البحرية الحمراء",             price: "50" },
+          { name: "شوربة جمبري أحمر",      desc: "شوربة جمبري حمراء غنية بالنكهة",              price: "250" },
+          { name: "شوربة جندوفلي",         desc: "شوربة الجندوفلي البحري اللذيذة",              price: "150" },
+          { name: "شوربة بطارخ",           desc: "شوربة البطارخ الغنية بالنكهة",               price: "260" },
+          { name: "شوربة الشيف",           desc: "تشكيلة الشيف المميزة من الشوربة البحرية",      price: "260" },
+          { name: "شوربة مخلية",           desc: "شوربة مأكولات بحرية مخلية",                  price: "240" },
+          { name: "ملوخية سادة",           desc: "ملوخية طازجة سادة",                           price: "70" },
+        ]
+      },
+      {
+        name: "أطباق الشاطئ",
+        items: [
+          { name: "طبق الشاطئ المميز",       desc: "فيليه + سبيط + جمبري",                         price: "280" },
+          { name: "فيليه محشي سي فود",       desc: "فيليه سمك محشو بخليط مأكولات البحر",           price: "300" },
+          { name: "كلماري محشي سي فود",      desc: "حبار محشو بخليط مأكولات البحر",               price: "300" },
+          { name: "سالمون",                  desc: "سمك السالمون الفاخر",                          price: "950" },
+          { name: "شيش طاووك الشاطئ",        desc: "شيش طاووك على الطريقة البحرية",               price: "200" },
+          { name: "فيليه مشوي على الفحم",    desc: "فيليه سمك طازج مشوي على الفحم",               price: "200" },
+          { name: "سبيط مشوي على الفحم",     desc: "سبيط بلدي مشوي على الفحم",                   price: "250" },
+          { name: "كفتة جمبري",              desc: "كفتة مصنوعة من الجمبري الطازج",               price: "250" },
+          { name: "كفتة سمك",               desc: "كفتة سمك طازجة مشوية",                        price: "200" },
+        ]
+      },
+      {
+        name: "الوجبات",
+        items: [
+          { name: "بوري + أرز",               desc: "١ بوري - أرز - عيش - سلطة",                                              price: "200" },
+          { name: "بلطي + فيليه",             desc: "١ سمك بلطي - قطعة فيليه - أرز سادة - سلطة - عيش",                      price: "250" },
+          { name: "بلطي + أرز",               desc: "١ سمك بلطي - أرز سادة - سلطة - عيش",                                    price: "140" },
+          { name: "١/٤ فيليه + أرز",          desc: "١/٤ فيليه - أرز سادة - سلطة - عيش",                                     price: "200" },
+          { name: "١/٤ فيليه أرز بالجمبري",   desc: "١/٤ فيليه - أرز بالجمبري - سلطة - عيش",                                 price: "250" },
+          { name: "طاجن جمبري أو فيليه",      desc: "طاجن جمبري أو فيليه أو سبيط - أرز سادة - سلطة - عيش",                  price: "290" },
+          { name: "٥ حبات جمبري",             desc: "٥ حبات جمبري - شيش فيليه - أرز سادة - سلطة - عيش",                     price: "250" },
+          { name: "شوربة + ٢ شيش فيليه",      desc: "شوربة - ٢ شيش فيليه - أرز سادة - سلطة - عيش",                          price: "300" },
+          { name: "وجبة ماكريل",              desc: "وجبة ماكريل - أرز سادة - سلطة - عيش",                                   price: "250" },
+          { name: "وجبة مكس",                 desc: "بطارخ - سبيط - جمبري وفيليه - وكفتة - جمبري شوربة حمراء - سلطة",        price: "480" },
+          { name: "فتة سي فود",               desc: "فتة مأكولات البحر اللذيذة",                                              price: "250-290" },
+        ]
+      },
+      {
+        name: "الجمبري",
+        items: [
+          { name: "جمبري وسط",             desc: "جمبري وسط طازج",           price: "1100" },
+          { name: "جمبري فوق الوسط",       desc: "جمبري أكبر من الوسط",     price: "1300" },
+          { name: "جمبري كبير",            desc: "جمبري كبير الحجم",         price: "2000" },
+          { name: "جمبري جامبو",           desc: "جمبري جامبو فاخر",         price: "2500" },
+          { name: "جمبري سويسي سوبر جامبو",desc: "أكبر أنواع الجمبري",      price: "3000" },
+          { name: "جمبري لحم وسط",         desc: "جمبري لحم وسط",           price: "1300" },
+          { name: "جمبري لحم كبير",        desc: "جمبري لحم كبير الحجم",    price: "1500" },
+        ]
+      },
+      {
+        name: "السلطات",
+        items: [
+          { name: "سلطة رنجة بالبصل",    desc: "سلطة رنجة طازجة مع البصل",               price: "95" },
+          { name: "سلطة بطارخ",          desc: "سلطة بطارخ مميزة",                       price: "100" },
+          { name: "سلطة جمبري",          desc: "سلطة جمبري طازجة",                       price: "150" },
+          { name: "فتوش",                desc: "سلطة فتوش طازجة",                        price: "80" },
+          { name: "تبولة",               desc: "سلطة تبولة بقدونس وبرغل",               price: "35" },
+          { name: "سلطة جرجير",          desc: "سلطة جرجير طازجة",                       price: "80" },
+          { name: "كافيار",              desc: "كافيار مميز",                            price: "45" },
+          { name: "جميع المخللات والسلطات", desc: "طحينة - بابا غنوج - راهب - زبادي بالخيار - سلطة خضراء - باذنجان مخلل - توميه - طرشي بلدي - كولسلو", price: "30" },
+        ]
+      },
+      {
+        name: "القشريات",
+        items: [
+          { name: "بكلاويز",     desc: "ثوم وكرفس كريمة / خلطة إسكندراني",      price: "450" },
+          { name: "كابوريا نتي", desc: "مشوي / مسلوقة / مخلية",                 price: "600" },
+          { name: "جندوفلي",    desc: "خلطة إسكندراني / ثوم وكرفس / مسلوقة",  price: "500" },
+          { name: "بلح البحر",  desc: "ثوم وكرفس / مسلوقة بالشوربة",           price: "600" },
+          { name: "استاكوزا",   desc: "مشوي / مخلية",                          price: "2000" },
+          { name: "بطارخ بلدي", desc: "بالزبدة - مقلي",                        price: "1400" },
+        ]
+      },
+      {
+        name: "الوليمة",
+        items: [
+          { name: "وليمة فردين",   desc: "١٢ جمبري - ٤ مقلي - ٤ جريل - ٤ بترفلاي - ٤ فيليه - ٤ كفتة - ١٠٠ جرام سبيط - ١ كابوريا - ٨ بلح البحر - مفروشة أرز - سلطات", price: "800" },
+          { name: "وليمة ٤ أفراد", desc: "٢٤ جمبري - ٨ مقلي - ٨ جريل - ٨ بترفلاي - ٨ فيليه - ٨ كفتة - ٢٠٠ جرام سبيط - ٢ كابوريا - ١٦ بلح البحر - مفروشة أرز - سلطات", price: "1600" },
+          { name: "صينية الشاطئ",  desc: "٢ بلطي مقلي - ٣٠٠ جرام جمبري مقلي - ٣٠٠ فيليه مقلي - ٢ كابوريا مشوي - ٢ شوربة حمراء - ٢ سلطة",                              price: "900" },
+          { name: "صينية السعادة",  desc: "٢ بوري سنجاري - ٢ بلطي زيت وليمون - ١/٤ جمبري وسط مقلي - ١/٤ جمبري وسط جريل - ١/٤ جمبري وسط بترفلاي - ١٢ جندوفلي زيت وليمون - طاجن جمبري وسط أحمر - ١/٤ سبيط مقلي كرسبي - أرز سادة بعدد الأفراد - ٥ سلطة", price: "2000" },
+          { name: "صينية الشيف رضا", desc: "سمكة بوري سنجاري + ٨ جمبري مقلي راس وديل + ٨ جمبري جريل + ٢ كابوريا كبير + رز + ٢ سلطة",                                    price: "850" },
+        ]
+      },
+      {
+        name: "أرز الشاطئ",
+        items: [
+          { name: "أرز بالجمبري الكبير المقلي",  desc: "أرز مع جمبري كبير مقلي",           price: "150-170" },
+          { name: "أرز بالجمبري الكبير مدفون",   desc: "أرز بالجمبري مدفون",               price: "150-170" },
+          { name: "أرز بالسي فود",               desc: "أرز مع خليط مأكولات البحر",        price: "180-250" },
+          { name: "أرز بالسي فود بالمايونيز",    desc: "أرز سي فود مع صوص المايونيز",     price: "250-290" },
+          { name: "مكرونة بالسي فود بالكريمة",   desc: "مكرونة مع مأكولات البحر والكريمة",price: "250-290" },
+          { name: "مكرونة سي فود حمراء",         desc: "مكرونة مع صوص الطماطم الحمراء",  price: "250-290" },
+          { name: "أرز صيادية بالخلطة",          desc: "أرز صيادية بالخلطة المميزة",       price: "40-50" },
+          { name: "أرز مكس مشوي أو مقلي",        desc: "أرز مع مكس مشوي أو مقلي",         price: "200-250" },
+          { name: "أرز أبيض بصوص الكاري والجمبري", desc: "أرز أبيض مع صوص الكاري والجمبري", price: "180" },
+        ]
+      },
+      {
+        name: "الساندويتشات",
+        items: [
+          { name: "ساندويتش سبيط",    desc: "ساندويتش سبيط مقلي هش",       price: "100" },
+          { name: "ساندويتش جمبري",   desc: "ساندويتش جمبري مقلي لذيذ",    price: "100" },
+          { name: "ساندويتش فيليه",   desc: "ساندويتش فيليه سمك",          price: "85" },
+          { name: "ساندويتش كفتة",    desc: "ساندويتش كفتة سمك أو جمبري",  price: "100" },
+          { name: "ساندويتش حواوشي",  desc: "حواوشي بحري مميز",            price: "110" },
+        ]
+      },
+      {
+        name: "الطواجن",
+        items: [
+          { name: "طاجن جمبري وسبيط بالكريمة",     desc: "طاجن جمبري وسبيط مع الكريمة",      price: "290" },
+          { name: "طاجن جمبري (صلصة - كريمة)",     desc: "طاجن جمبري بالصلصة أو الكريمة",    price: "290" },
+          { name: "طاجن سبيط (صلصة - كريمة)",      desc: "طاجن سبيط بالصلصة أو الكريمة",    price: "290" },
+          { name: "طاجن فيليه",                     desc: "طاجن فيليه السمك",                 price: "250" },
+          { name: "طاجن (١/٤ جمبري - ١/٤ سبيط)",   desc: "طاجن جمبري وسبيط مشترك",          price: "500" },
+          { name: "طاجن كوكتيل",                    desc: "جمبري فيليه سبيط",                  price: "400" },
+          { name: "طاجن فياجرا الشاطئ",             desc: "٣٥٠ جرام - طاجن فياجرا مميز",      price: "400" },
+          { name: "طاجن بطارخ",                     desc: "طاجن البطارخ الفاخر",               price: "350" },
+        ]
+      },
+    ]
+  },
+  {
+    id: "hall-shrimp",
+    name: "منيو الصالة — الجمبريات",
+    icon: "🦐",
+    desc: "أفخر أنواع الجمبري الطازج",
+    color: "rgba(14,165,233,0.12)",
+    subcategories: [
+      {
+        name: "الجمبريات",
+        items: [
+          { name: "جمبري وسط",       desc: "جمبري وسط طازج",         price: "1230" },
+          { name: "جمبري كبير",      desc: "جمبري كبير الحجم",       price: "2000" },
+          { name: "جمبري فوق الوسط", desc: "جمبري أكبر من الوسط",   price: "1350" },
+          { name: "جمبري جامبو",     desc: "جمبري جامبو فاخر",       price: "3000" },
+          { name: "جمبري لحم وسط",   desc: "جمبري لحم وسط",         price: "1450" },
+          { name: "جمبري لحم كبير",  desc: "جمبري لحم كبير",        price: "1600" },
+        ]
+      }
+    ]
+  },
+  {
+    id: "hall-fish",
+    name: "منيو الصالة — الأسماك",
+    icon: "🐟",
+    desc: "أسماك طازجة يومياً بأفضل الأسعار",
+    color: "rgba(6,182,212,0.12)",
+    subcategories: [
+      {
+        name: "الأسماك",
+        items: [
+          { name: "ثعابين",              desc: "ثعابين البحر الطازجة",             price: "950" },
+          { name: "موسى",                desc: "سمك موسى الطازج",                  price: "1570" },
+          { name: "بربوني (سلطان إبراهيم)", desc: "سمك البربوني سلطان إبراهيم",  price: "880" },
+          { name: "قاروص",               desc: "سمك القاروص الطازج",              price: "950" },
+          { name: "لوت",                 desc: "سمك اللوت الطازج",                price: "390" },
+          { name: "وقار بلدي",           desc: "سمك الوقار البلدي الطازج",        price: "1450" },
+          { name: "دنيس",                desc: "سمك الدنيس الطازج",               price: "950" },
+          { name: "بوري",                desc: "سمك البوري الطازج",               price: "390" },
+          { name: "بلطي",                desc: "سمك البلطي الطازج",               price: "210" },
+          { name: "سبيط بلدي",           desc: "سبيط بلدي طازج",                  price: "785" },
+          { name: "سهيلة",               desc: "سمك السهيلة الطازج",              price: "850" },
+          { name: "مكرونة بلدي سويسي",   desc: "سمك المكرونة البلدي السويسي",    price: "315" },
+        ]
+      }
+    ]
+  },
+  {
+    id: "hall-soups",
+    name: "منيو الصالة — الشوربات",
+    icon: "🥣",
+    desc: "شوربات بحرية غنية ودافئة",
+    color: "rgba(239,68,68,0.1)",
+    subcategories: [
+      {
+        name: "الشوربات",
+        items: [
+          { name: "شوربة سي فوود عادية",       desc: "شوربة مأكولات بحرية عادية",          price: "270" },
+          { name: "شوربة جمبري فقط",           desc: "شوربة جمبري خاصة",                   price: "280" },
+          { name: "ملوخية بالجمبري",           desc: "ملوخية طازجة مع الجمبري",            price: "135" },
+          { name: "شوربة فياجرا حمراء",        desc: "شوربة فياجرا باللون الأحمر",         price: "50" },
+          { name: "شوربة سي فود مخلية",        desc: "شوربة مأكولات بحرية مخلية",          price: "270" },
+          { name: "شوربة الشيف (جمبري + بطارخ)", desc: "شوربة الشيف المميزة بالجمبري والبطارخ", price: "290" },
+          { name: "شوربة جندوفلي",             desc: "شوربة الجندوفلي البحري",             price: "170" },
+        ]
+      }
+    ]
+  },
+  {
+    id: "hall-salads",
+    name: "منيو الصالة — السلطات",
+    icon: "🥗",
+    desc: "سلطات طازجة ومتنوعة",
+    color: "rgba(34,197,94,0.1)",
+    subcategories: [
+      {
+        name: "السلطات",
+        items: [
+          { name: "طحينة",                    desc: "طحينة بلدية",                                 price: "35" },
+          { name: "طماطم متبلة",              desc: "طماطم طازجة متبلة",                          price: "50" },
+          { name: "كولسلو",                   desc: "كولسلو طازج",                                price: "35" },
+          { name: "سلطة الشيف (جمبري + سبيط)", desc: "سلطة الشيف المميزة بالجمبري والسبيط",     price: "135" },
+          { name: "سلطة رنجة بالبصل",         desc: "سلطة رنجة مع بصل طازج",                    price: "107" },
+          { name: "بابا غنوج",                desc: "بابا غنوج مشوي",                            price: "35" },
+          { name: "راهب",                     desc: "سلطة الراهب",                               price: "35" },
+          { name: "توميه",                    desc: "توميه طازج",                                price: "35" },
+          { name: "حمص بالطحينة",             desc: "حمص مع الطحينة",                            price: "35" },
+          { name: "زبادي الخيار والنعناع",    desc: "زبادي بارد مع خيار ونعناع",                price: "35" },
+          { name: "باذنجان مقلي طرنشاط",     desc: "باذنجان مقلي",                              price: "35" },
+          { name: "بنجر",                     desc: "سلطة بنجر",                                price: "35" },
+          { name: "سلطة خضراء بلدي",          desc: "سلطة خضراء بلدية",                         price: "45" },
+          { name: "سلطة خضراء طرنشاط",       desc: "سلطة خضراء طرنشاط",                       price: "56" },
+          { name: "سلطة فتوش",                desc: "سلطة فتوش طازجة",                          price: "90" },
+          { name: "سلطة كافيار المميز",       desc: "سلطة كافيار فاخر",                         price: "95" },
+        ]
+      }
+    ]
+  },
+  {
+    id: "hall-crustaceans",
+    name: "منيو الصالة — القشريات",
+    icon: "🦞",
+    desc: "قشريات بحرية فاخرة",
+    color: "rgba(239,68,68,0.12)",
+    subcategories: [
+      {
+        name: "القشريات",
+        items: [
+          { name: "استاكوزا",     desc: "مخلية بالجبنة الموزريلا - مشوية سنجاري بالزبدة",                  price: "2100" },
+          { name: "كابوريا",      desc: "مشوي جريل - مسلوقة بالخلطة - مخلية",                             price: "670" },
+          { name: "جندوفلي بلدي", desc: "إسكندراني بالخلطة - ثوم وكرفس بالكريمة - زيت وليمون",           price: "560" },
+          { name: "بلح البحر",   desc: "ثوم وكرفس كريمة - ثوم وكرفس بدون كريمة",                        price: "670" },
+          { name: "جندوفلي عرايس", desc: "ثوم وكرفس كريمة - زيت وليمون",                               price: "500" },
+          { name: "سالمون",       desc: "زيت وليمون - مشوي جريل - مشوي بالزبدة",                         price: "1000" },
+          { name: "بطارخ بلدي",  desc: "زيت وليمون - مشوي جريل - مشوي بالزبدة - طاجن",                  price: "1600" },
+        ]
+      }
+    ]
+  },
+  {
+    id: "hall-trays",
+    name: "منيو الصالة — الصواني",
+    icon: "🍱",
+    desc: "صواني الأسماك الكاملة بالبطاطس",
+    color: "rgba(168,85,247,0.1)",
+    subcategories: [
+      {
+        name: "الصواني",
+        items: [
+          { name: "قاروص سنجاري بالبطاطس",    desc: "قاروص طازج بالبطاطس",      price: "1000" },
+          { name: "وقار بلدي بالبطاطس",        desc: "وقار بلدي بالبطاطس",       price: "1500" },
+          { name: "دنيس بالبطاطس",             desc: "دنيس طازج بالبطاطس",       price: "1000" },
+          { name: "لوت سنجاري بالبطاطس",       desc: "لوت بالبطاطس",             price: "450" },
+          { name: "ثعابين صينية بالبطاطس",     desc: "ثعابين البحر بالبطاطس",    price: "1000" },
+          { name: "بوري سنجاري بالبطاطس",      desc: "بوري سنجاري بالبطاطس",    price: "450" },
+        ]
+      }
+    ]
+  },
+  {
+    id: "hall-dishes",
+    name: "منيو الصالة — الأطباق",
+    icon: "🍽️",
+    desc: "أطباق متنوعة من مأكولات البحر",
+    color: "rgba(245,158,11,0.1)",
+    subcategories: [
+      {
+        name: "الأطباق",
+        items: [
+          { name: "فتة سي فود - خل وثوم",     desc: "فتة مأكولات البحر بالخل والثوم",           price: "325" },
+          { name: "كلماري محشي سي فود",        desc: "حبار محشو بخليط مأكولات البحر",           price: "335" },
+          { name: "فيليه محشي سي فود",         desc: "فيليه سمك محشو بمأكولات البحر",           price: "335" },
+          { name: "شيش طاووك",                 desc: "شيش طاووك مشوي",                          price: "225" },
+          { name: "طبق الشاطئ مقلي / مشوي",   desc: "فيليه - سبيط - جمبري",                   price: "315" },
+          { name: "فيليه مشوي على الفحم",      desc: "فيليه طازج مشوي على الفحم",              price: "180" },
+          { name: "سبيط مشوي على الفحم",       desc: "سبيط بلدي مشوي على الفحم",              price: "280" },
+          { name: "كفتة جمبري",                desc: "مقلي - مشوي على الجريل - بالصوص",        price: "280" },
+          { name: "كفتة سمك",                  desc: "مشوي على الجريل - بالصوص",               price: "225" },
+          { name: "بسبوسة بطارخ",              desc: "بسبوسة مع البطارخ الفاخر",               price: "300" },
+        ]
+      }
+    ]
+  },
+  {
+    id: "hall-feast",
+    name: "منيو الصالة — الوليمة",
+    icon: "🎉",
+    desc: "وليمات ضخمة للعائلة والمجموعات",
+    color: "rgba(212,168,83,0.12)",
+    subcategories: [
+      {
+        name: "الوليمة",
+        items: [
+          { name: "وليمة فردين",      desc: "١٢ جمبري - ٤ مقلي - ٤ جريل - ٤ بترفلاي - ٤ فيليه + ٤ كفتة + ١٠٠ جرام سبيط - ٥ بلح البحر - طحينة وبابا غنوج وراهب - روشة أرز + سلطات", price: "895" },
+          { name: "وليمة أربع أفراد", desc: "٨ فيليه - ٨ كفتة - ٢٠٠ جرام سبيط + ٢ كابوريا + ١٦ بلح البحر + مفروشة أرز + سلطات طحينة وبابا غنوج وراهب", price: "1790" },
+          { name: "صينية الشاطئ",     desc: "٢ بلطي مقلي - ٣٠٠ جرام جمبري مقلي - ٣٠٠ فيليه مقلي - ٢ كابوريا مشوي - ٢ شوربة حمراء - ٢ سلطة", price: "1000" },
+          { name: "صينية السعادة",     desc: "٢ بوري سنجاري + ٢ بلطي زيت وليمون + ١/٤ جمبري وسط مقلي + ١ جمبري وسط جريل + ١ جمبري وسط بترفلاي + ١٢ جندوفلي زيت وليمون + طاجن جمبري وسبيط أحمر + سبيط ١/٤ مقلي كرسبي + أرز سادة بعدد أفراد + ٥ سلطة", price: "2240" },
+          { name: "صينية الشيف رضا",   desc: "سمكة بوري سنجاري + ٨ جمبري مقلي راس وديل + ٨ جمبري جريل + ٢ كابوريا كبير + رز + ٢ سلطة", price: "950" },
+        ]
+      }
+    ]
+  },
+  {
+    id: "hall-rice",
+    name: "منيو الصالة — أرز الشاطئ",
+    icon: "🍚",
+    desc: "أرز ومعكرونة بمأكولات البحر",
+    color: "rgba(34,197,94,0.08)",
+    subcategories: [
+      {
+        name: "أرز الشاطئ",
+        items: [
+          { name: "أرز جمبري مقلي",              desc: "أرز مع جمبري مقلي",              price: "160" },
+          { name: "أرز جمبري مدفون",             desc: "أرز مع جمبري مدفون",            price: "160" },
+          { name: "أرز سي فود",                  desc: "أرز مع مكس مأكولات البحر",       price: "280" },
+          { name: "أرز سي فود مايونيز",          desc: "أرز سي فود مع صوص المايونيز",  price: "290" },
+          { name: "أرز صيادية",                  desc: "أرز صيادية بالخلطة",            price: "50" },
+          { name: "أرز مكس مشوي",                desc: "أرز مكس مشوي",                  price: "280" },
+          { name: "أرز مكس مقلي",                desc: "أرز مكس مقلي",                  price: "280" },
+          { name: "أرز جمبري مكسرات",            desc: "أرز مع جمبري والمكسرات",        price: "175" },
+          { name: "فتة سي فود",                  desc: "فتة مأكولات البحر",              price: "325" },
+          { name: "أرز أبيض كاري",               desc: "أرز أبيض مع صوص الكاري",        price: "200" },
+          { name: "مكرونة سي فود كريمة",         desc: "مكرونة مع مأكولات البحر والكريمة", price: "325" },
+          { name: "مكرونة سي فود حمراء",         desc: "مكرونة مع صوص الطماطم",         price: "325" },
+        ]
+      }
+    ]
+  },
+];
+
+
+/* ============================================================
+   CATEGORIES CONFIG
+   ============================================================ */
+const CATS = [
+  {id:'takeaway', icon:'🚗', ar:'منيو التيك أواي', en:'Takeaway Menu', desc_ar:'طلبات التوصيل والتيك أواي'},
+  {id:'restaurant', icon:'🍽️', ar:'منيو المطعم', en:'Restaurant Menu', desc_ar:'أصناف المطعم المميزة'},
+  {id:'banquet', icon:'👑', ar:'منيو البوفيه', en:'Buffet Menu', desc_ar:'بوفيه مأكولات بحرية فاخر'},
+];
+
+// Map MENU_DATA to categories
+const categoriesMap = {};
+MENU_DATA.forEach(cat => {
+  categoriesMap[cat.id] = cat;
+});
+
+const DISPLAY_CATS = MENU_DATA.map(cat => ({
+  id: cat.id,
+  icon: cat.icon || '🐟',
+  ar: cat.name,
+  en: cat.name,
+  desc: cat.desc || '',
+  color: cat.color || 'rgba(196,160,68,0.10)',
+  count: flattenItems(cat).length
+}));
+
+function flattenItems(cat) {
+  let items = [];
+  if (cat.subcategories) {
+    cat.subcategories.forEach(sub => {
+      (sub.items || []).forEach(item => {
+        items.push({...item, subName: sub.name, categoryName: cat.name, categoryId: cat.id});
+      });
+    });
+  }
+  if (cat.items) cat.items.forEach(item => items.push({...item, categoryName: cat.name, categoryId: cat.id}));
+  return items;
+}
+
+function allItems() {
+  let all = [];
+  MENU_DATA.forEach(cat => all.push(...flattenItems(cat)));
+  return all;
+}
+
+const ITEM_ICONS = {
+  'جمبري':'🦐','سمك':'🐟','فيليه':'🐟','كابوريا':'🦀','بلطي':'🐟','بوري':'🐟',
+  'سبيط':'🦑','قاروص':'🐟','دنيس':'🐠','شوربة':'🍲','سلطة':'🥗','أرز':'🍚',
+  'وجبة':'🍽️','ساندويتش':'🥪','كفتة':'🍢','جندوفلي':'🐚','بكلاويز':'🦞',
+  'استاكوزا':'🦞','بلح البحر':'🦪','بطارخ':'🐟','ملوخية':'🥬','وليمة':'👑',
+  'صينية':'🍱','سالمون':'🐟','مكرونة':'🍝','فتة':'🍲','مفروشة':'🍱',
+};
+
+function getItemIcon(name) {
+  for (const [key, icon] of Object.entries(ITEM_ICONS)) {
+    if (name && name.includes(key)) return icon;
+  }
+  return '🐟';
+}
+
+/* ============================================================
+   LANGUAGE
+   ============================================================ */
+let currentLang = localStorage.getItem('lang') || 'ar';
+
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  const html = document.documentElement;
+  html.lang = lang;
+  html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+  document.querySelectorAll('[data-ar]').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
+    if (val) {
+      if (el.tagName === 'INPUT') el.placeholder = val;
+      else el.innerHTML = val;
+    }
+  });
+
+  document.getElementById('langBtn').textContent = lang === 'ar' ? 'EN' : 'عر';
+
+  // Update search placeholder
+  const searchIn = document.getElementById('menuSearch');
+  if (searchIn) searchIn.placeholder = lang === 'ar' ? 'ابحث عن طبق...' : 'Search for a dish...';
+
+  renderCarousel();
+  renderMenuItems(currentCatId);
+  renderFooterLinks();
+}
+
+function toggleLang() {
+  applyLang(currentLang === 'ar' ? 'en' : 'ar');
+}
+
+/* ============================================================
+   THEME
+   ============================================================ */
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  const icon = document.querySelector('#themeBtn i');
+  icon.className = theme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+}
+
+/* ============================================================
+   SWIPERS
+   ============================================================ */
+let heroSwiper, catSwiper, gallerySwiper, testiSwiper;
+
+function initSwipers() {
+  heroSwiper = new Swiper('.hero-swiper', {
+    loop: true,
+    autoplay: {delay: 5000, disableOnInteraction: false},
+    pagination: {el: '.hero-swiper .swiper-pagination', clickable: true},
+    navigation: {nextEl: '.hero-swiper .swiper-button-next', prevEl: '.hero-swiper .swiper-button-prev'},
+    effect: 'fade',
+    fadeEffect: {crossFade: true},
+    speed: 800,
+  });
+
+  catSwiper = new Swiper('.cat-swiper', {
+    loop: true,
+    autoplay: {delay: 4500, disableOnInteraction: false},
+    slidesPerView: 2,
+    spaceBetween: 16,
+    pagination: {el: '.cat-swiper .swiper-pagination', clickable: true},
+    navigation: {nextEl: '.cat-swiper .swiper-button-next', prevEl: '.cat-swiper .swiper-button-prev'},
+    grabCursor: true,
+    breakpoints: {
+      640: {slidesPerView: 2, spaceBetween: 16},
+      900: {slidesPerView: 3, spaceBetween: 20},
+      1200: {slidesPerView: 4, spaceBetween: 24},
+    },
+  });
+
+  gallerySwiper = new Swiper('.gallery-swiper', {
+    loop: true,
+    autoplay: {delay: 4000, disableOnInteraction: false},
+    pagination: {el: '.gallery-swiper .swiper-pagination', clickable: true},
+    navigation: {nextEl: '.gallery-swiper .swiper-button-next', prevEl: '.gallery-swiper .swiper-button-prev'},
+    grabCursor: true,
+    speed: 700,
+    effect: 'coverflow',
+    coverflowEffect: {rotate: 30, stretch: 0, depth: 100, modifier: 1, slideShadows: false},
+    slidesPerView: 1,
+    breakpoints: {
+      768: {slidesPerView: 1.4, spaceBetween: 20},
+      1024: {slidesPerView: 1.6, spaceBetween: 30},
+    },
+    centeredSlides: true,
+  });
+
+  testiSwiper = new Swiper('.testi-swiper', {
+    loop: true,
+    autoplay: {delay: 5000, disableOnInteraction: false},
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {el: '.testi-swiper .swiper-pagination', clickable: true},
+    grabCursor: true,
+    breakpoints: {
+      768: {slidesPerView: 2, spaceBetween: 20},
+      1024: {slidesPerView: 3, spaceBetween: 24},
+    },
+  });
+}
+
+/* ============================================================
+   CAROUSEL RENDER
+   ============================================================ */
+function renderCarousel() {
+  const container = document.getElementById('categoriesCarousel');
+  if (!container) return;
+
+  const html = DISPLAY_CATS.map(cat => `
+    <div class="swiper-slide cat-slide">
+      <div class="cat-card" onclick="openMenu('${cat.id}')">
+        <div class="cat-img">${cat.icon}</div>
+        <div class="cat-body">
+          <h3>${currentLang === 'ar' ? cat.ar : cat.en}</h3>
+          <p>${cat.desc || (currentLang === 'ar' ? 'تشكيلة مميزة من المأكولات البحرية' : 'A fine selection of seafood')}</p>
+          <div class="cat-footer">
+            <span class="cat-count"><i class="fa-solid fa-bowl-food"></i> ${cat.count} ${currentLang === 'ar' ? 'صنف' : 'dishes'}</span>
+            <button class="cat-view-btn">${currentLang === 'ar' ? 'عرض الأصناف' : 'View Items'}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  container.innerHTML = html;
+  if (catSwiper) catSwiper.update();
+}
+
+/* ============================================================
+   MENU OVERLAY
+   ============================================================ */
+let currentCatId = MENU_DATA[0]?.id || null;
+
+function openMenu(catId) {
+  const overlay = document.getElementById('menuOverlay');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  renderMenuTabs();
+  if (catId) {
+    currentCatId = catId;
+  }
+  renderMenuItems(currentCatId);
+  activateTab(currentCatId);
+}
+
+function closeMenu() {
+  document.getElementById('menuOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function renderMenuTabs() {
+  const tabs = document.getElementById('menuTabs');
+  if (!tabs) return;
+  tabs.innerHTML = DISPLAY_CATS.map(cat => `
+    <button class="cat-tab" data-id="${cat.id}" onclick="switchCat('${cat.id}')">
+      ${cat.icon} ${currentLang === 'ar' ? cat.ar : cat.en}
+    </button>
+  `).join('');
+}
+
+function switchCat(catId) {
+  currentCatId = catId;
+  document.getElementById('menuSearch').value = '';
+  renderMenuItems(catId);
+  activateTab(catId);
+}
+
+function activateTab(catId) {
+  document.querySelectorAll('.cat-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.id === catId);
+  });
+}
+
+function renderMenuItems(catId) {
+  const cat = MENU_DATA.find(c => c.id === catId);
+  const grid = document.getElementById('itemsGrid');
+  if (!cat || !grid) return;
+  const items = flattenItems(cat);
+  grid.innerHTML = items.length
+    ? items.map((item, i) => buildItemCard(item, i)).join('')
+    : `<div class="empty-state"><div class="e-icon">🍽️</div><h3>${currentLang === 'ar' ? 'لا توجد أصناف' : 'No items found'}</h3></div>`;
+}
+
+function buildItemCard(item, i) {
+  const icon = getItemIcon(item.name);
+  const priceHtml = item.market
+    ? `<span class="price-market">${currentLang === 'ar' ? 'على حسب سعر اليوم' : 'Market Price'}</span>`
+    : `<span class="item-price">${item.price}<span class="curr"> ج.م</span></span>`;
+  return `
+    <div class="item-card" onclick='openItemDetail(${JSON.stringify(JSON.stringify(item))})' style="animation-delay:${Math.min(i,12)*.04}s">
+      <div class="item-img">${icon}</div>
+      <div class="item-body">
+        <h3>${item.name}</h3>
+        <p class="item-desc">${item.desc || (currentLang === 'ar' ? 'مأكولات بحرية طازجة يومياً' : 'Fresh seafood daily')}</p>
+        <div class="item-footer">${priceHtml}<span class="item-arrow"><i class="fa-solid fa-arrow-left"></i></span></div>
+      </div>
+    </div>`;
+}
+
+/* ============================================================
+   SEARCH
+   ============================================================ */
+function handleSearch() {
+  const q = document.getElementById('menuSearch').value.trim();
+  const grid = document.getElementById('itemsGrid');
+  if (!q) { renderMenuItems(currentCatId); return; }
+
+  const results = allItems().filter(item =>
+    item.name.includes(q) || (item.desc && item.desc.includes(q))
+  );
+
+  // Deactivate all tabs
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+
+  grid.innerHTML = results.length
+    ? results.map((item, i) => buildItemCard(item, i)).join('')
+    : `<div class="empty-state"><div class="e-icon">🔍</div><h3>${currentLang === 'ar' ? 'لا توجد نتائج' : 'No results'}</h3><p>${currentLang === 'ar' ? 'جرب كلمة أخرى' : 'Try another word'}</p></div>`;
+}
+
+/* ============================================================
+   ITEM DETAIL MODAL
+   ============================================================ */
+function openItemDetail(itemJson) {
+  const item = JSON.parse(itemJson);
+  const icon = getItemIcon(item.name);
+  document.getElementById('imodalEmoji').textContent = icon;
+  document.getElementById('imodalCat').textContent = item.categoryName || item.subName || '';
+  document.getElementById('imodalTitle').textContent = item.name;
+  document.getElementById('imodalDesc').textContent = item.desc || (currentLang === 'ar' ? 'مأكولات بحرية طازجة يومياً' : 'Fresh seafood daily');
+  const priceEl = document.getElementById('imodalPrice');
+  priceEl.innerHTML = item.market
+    ? (currentLang === 'ar' ? 'السعر على حسب اليوم' : 'Market Price')
+    : `${item.price} <span style="font-size:.85rem;color:var(--text-muted);font-weight:600">ج.م</span>`;
+  document.getElementById('itemModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeItemModal(e) {
+  if (!e || e.target === document.getElementById('itemModal')) {
+    document.getElementById('itemModal').classList.remove('open');
+    if (!document.getElementById('menuOverlay').classList.contains('open')) {
+      document.body.style.overflow = '';
+    }
+  }
+}
+
+/* ============================================================
+   FOOTER LINKS
+   ============================================================ */
+function renderFooterLinks() {
+  const el = document.getElementById('footerMenuLinks');
+  if (!el) return;
+  el.innerHTML = DISPLAY_CATS.slice(0, 6).map(cat => `
+    <li><a href="#" onclick="openMenu('${cat.id}')">${currentLang === 'ar' ? cat.ar : cat.en}</a></li>
+  `).join('');
+}
+
+/* ============================================================
+   SCROLL & ANIMATIONS
+   ============================================================ */
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
+  // close mobile menu
+  document.getElementById('navLinks').classList.remove('mobile-open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+
+function scrollToTop() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('navbar');
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+
+  const backTop = document.getElementById('backTop');
+  backTop.classList.toggle('visible', window.scrollY > 400);
+});
+
+// Reveal on scroll
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.12});
+
+function initReveal() {
+  document.querySelectorAll('[data-reveal], .feature-card').forEach(el => revealObserver.observe(el));
+}
+
+/* ============================================================
+   ANIMATED COUNTERS
+   ============================================================ */
+let countersStarted = false;
+
+function animateCounter(el) {
+  const target = parseInt(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const isYear = target > 1000;
+  const duration = 2000;
+  const start = performance.now();
+
+  function step(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const val = Math.floor(ease * target);
+    // Use Arabic-Indic numerals
+    el.textContent = val.toLocaleString('ar-EG') + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = target.toLocaleString('ar-EG') + suffix;
+  }
+  requestAnimationFrame(step);
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting && !countersStarted) {
+    countersStarted = true;
+    document.querySelectorAll('.stat-num[data-count]').forEach(animateCounter);
+  }
+}, {threshold: .5});
+
+/* ============================================================
+   HAMBURGER
+   ============================================================ */
+document.getElementById('hamburger').addEventListener('click', function() {
+  this.classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('mobile-open');
+});
+
+/* ============================================================
+   KEYBOARD
+   ============================================================ */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeItemModal();
+    closeMenu();
+  }
+});
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  // Apply saved preferences
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  applyTheme(savedTheme);
+  applyLang(currentLang);
+
+  // Render carousel
+  renderCarousel();
+  renderFooterLinks();
+
+  // Init swipers
+  initSwipers();
+
+  // Init scroll reveal
+  initReveal();
+
+  // Init stats counter observer
+  const statsEl = document.getElementById('stats');
+  if (statsEl) statsObserver.observe(statsEl);
+
+  // Feature cards stagger
+  document.querySelectorAll('.feature-card').forEach((card, i) => {
+    card.style.transitionDelay = (i * 0.1) + 's';
+  });
+
+  // Loading screen
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+  }, 2400);
+});
+</script>
+</body>
+</html>
